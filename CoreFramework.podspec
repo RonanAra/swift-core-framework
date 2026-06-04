@@ -17,7 +17,7 @@ Pod::Spec.new do |spec|
 
   spec.name         = "CoreFramework"
   spec.version      = "0.0.1"
-  spec.summary      = "CoreFramework was developed to App Reminder as a DS solution"
+  spec.summary      = "CoreFramework was developed for the Reminder app as a Design System (DS) solution"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,9 +25,10 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
+		Este projeto tem o intuito de...
                    DESC
 
-  spec.homepage     = "http://github.com/RonanAra/CoreFramework"
+  spec.homepage     = "https://github.com/RonanAra/CoreFramework.git"
   # spec.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
 
 
@@ -63,7 +64,9 @@ Pod::Spec.new do |spec|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-  # spec.platform     = :ios
+  spec.platform     = :ios, "12,0"
+  spec.ios.deployment_target = "12.0"
+  spec.swift_versions = ["5.0"]
   # spec.platform     = :ios, "5.0"
 
   #  When using multiple platforms
@@ -80,7 +83,7 @@ Pod::Spec.new do |spec|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  spec.source       = { :git => "http://EXAMPLE/CoreFramework.git", :tag => "#{spec.version}" }
+  spec.source       = { :git => "https://github.com/RonanAra/CoreFramework.git", :tag => "#{spec.version}" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
