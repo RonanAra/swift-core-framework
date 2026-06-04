@@ -5,11 +5,11 @@ Pod::Spec.new do |spec|
   spec.version      = "0.0.1"
   spec.summary      = "CoreFramework was developed for the Reminder app as a Design System (DS) solution"
 
-  spec.description  = <<-DESC
-		Este projeto tem o intuito de...
-                   DESC
+  spec.description           = <<-DESC
+                   Este projeto tem o intuito de...
+  DESC
 
-  spec.homepage     = "https://github.com/RonanAra/CoreFramework.git"
+  spec.homepage     = "https://github.com/RonanAra/swift-core-framework.git"
   spec.license      = { :type => "MIT", :file => "LICENSE" }
   spec.author             = { "Ronan Fernandes" => "ronanlm10@hotmail.com" }
   spec.platform              = :ios, "13.0"
