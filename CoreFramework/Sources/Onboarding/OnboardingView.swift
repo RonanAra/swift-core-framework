@@ -34,7 +34,6 @@ class OnboardingView: UIView {
         button.setTitle("Próximo", for: .normal)
         button.setTitleColor(Colors.primaryRedBase, for: .normal)
         button.titleLabel?.font = Typography.subHeading
-        button.addTarget(self, action: #selector(didTapNextStep), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -52,6 +51,7 @@ class OnboardingView: UIView {
         addSubview(backgroundView)
         addSubview(messageLabel)
         addSubview(nextButton)
+        addTargets()
         setupConstraints()
     }
     
@@ -84,6 +84,14 @@ class OnboardingView: UIView {
             trailingAnchor.constraint(equalTo: trailingAnchor),
             bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+    }
+    
+    fileprivate func addTargets() {
+        nextButton.addTarget(
+            self,
+            action: #selector(didTapNextStep),
+            for: .touchUpInside
+        )
     }
     
     @objc
