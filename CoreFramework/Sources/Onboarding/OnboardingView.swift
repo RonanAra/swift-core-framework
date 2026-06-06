@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-class OnboardingView: UIView {
+public class OnboardingView: UIView {
     private var steps: [String] = []
     private var currentStep = 0
     
@@ -72,7 +72,7 @@ class OnboardingView: UIView {
         ])
     }
     
-    func presentOnboarding(on view: UIView, with steps: [String]) {
+    public func presentOnboarding(on view: UIView, with steps: [String]) {
         self.steps = steps
         self.currentStep = 0
         
