@@ -72,7 +72,7 @@ class OnboardingView: UIView {
         ])
     }
     
-    private func presentOnboarding(on view: UIView, with steps: [String]) {
+    func presentOnboarding(on view: UIView, with steps: [String]) {
         self.steps = steps
         self.currentStep = 0
         
