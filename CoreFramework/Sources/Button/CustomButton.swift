@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-protocol CustomButtonDelegate: AnyObject {
+public protocol CustomButtonDelegate: AnyObject {
     func buttonAction()
 }
 
@@ -74,12 +74,19 @@ public class CustomButton: UIButton {
     
     private func adjustIconPosition() {
         guard let iconPosition = iconPosition else { return }
-    
-        var config = self.configuration ?? UIButton.Configuration.plain()
-        config.imagePlacement = iconPosition == .horizontal ? .leading : .top
-        config.imagePadding = 8
-
-        self.configuration = config
+        
+        if #available(iOS 15.0, *) {
+            var config = self.configuration ?? UIButton.Configuration.plain()
+            config.imagePlacement = iconPosition == .horizontal ? .leading : .top
+            config.imagePadding = 8
+            self.configuration = config
+        } else {
+            if iconPosition == .horizontal {
+                imageEdgeInsets = UIEdgeInsets(top: 0, left: -8, bottom: 0, right: 0)
+            } else {
+                imageEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 8, right: 0)
+            }
+        }
     }
     
     @objc
